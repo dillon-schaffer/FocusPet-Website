@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import Card from "../components/ui/Card.astro";
+
+const available = [
+  "Focus Timer",
+  "Website Blocking",
+  "Application Blocking",
+  "Deep Focus",
+  "Backyard Area",
+  "Pool Area",
+  "Cozy Decorating",
+  "Focus Pro",
+  "Cloud Sync",
+  "Offline Support",
+];
+
+const inDevelopment = [
+  "Improved pet movement",
+  "More Pool decorations",
+  "Better water animations",
+  "Tutorial improvements",
+  "Placement improvements",
+  "Website improvements",
+];
+
+const plannedAreas = [
+  { title: "Japanese Garden", description: "Peaceful ponds, bonsai trees, bamboo, koi fish and relaxing decorations." },
+  { title: "Camping", description: "Campfires, hammocks, tents and cozy forest scenery." },
+  { title: "Greenhouse", description: "Plants, flowers, vegetables and gardening decorations." },
+  { title: "Beach", description: "Sandy landscapes, umbrellas, seashells and relaxing ocean decor." },
+  { title: "Snow Cabin", description: "Fireplaces, pine trees, snow and cozy winter decorations." },
+];
+
+const futureIdeas = [
+  "Seasonal decorations",
+  "More statistics",
+  "Additional customization",
+  "More pet animations",
+  "Accessibility improvements",
+  "Community requested features",
+];
+---
+
+<BaseLayout
+  title="Roadmap — Focus Pet"
+  description="See what's available today and what's growing next for Focus Pet."
+>
+  <Header />
+  <main>
+    <section class="mx-auto max-w-5xl px-6 py-16">
+      <a href="/" class="font-heading font-semibold text-text-secondary no-underline hover:text-accent-blue">
+        &larr; Back to Home
+      </a>
+
+      <div class="mt-8 text-center">
+        <h1 class="text-3xl font-extrabold md:text-4xl">Roadmap</h1>
+        <p class="mt-3 text-text-secondary">A look at what's here now, and what's growing next.</p>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="text-2xl font-extrabold md:text-3xl">Available Today</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {available.map((item) => (
+            <Card class="flex items-center gap-3 py-4">
+              <span class="text-xl text-accent-green" aria-hidden="true">✅</span>
+              <span class="font-heading font-semibold">{item}</span>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="text-2xl font-extrabold md:text-3xl">Currently in Development</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {inDevelopment.map((item) => (
+            <Card class="flex items-center gap-3 py-4">
+              <span class="text-xl" aria-hidden="true">🚧</span>
+              <span class="font-heading font-semibold">{item}</span>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="text-2xl font-extrabold md:text-3xl">Planned Areas</h2>
+        <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {plannedAreas.map((area) => (
+            <Card class="text-left">
+              <h3 class="text-lg font-bold">{area.title}</h3>
+              <p class="mt-2 text-text-secondary">{area.description}</p>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h2 class="text-2xl font-extrabold md:text-3xl">Future Ideas</h2>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {futureIdeas.map((item) => (
+            <Card class="py-4 text-center font-heading font-semibold">{item}</Card>
+          ))}
+        </div>
+      </div>
+
+      <p class="mt-16 text-center text-text-secondary">
+        Focus Pet is actively being developed, and community feedback helps shape future updates.
+      </p>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

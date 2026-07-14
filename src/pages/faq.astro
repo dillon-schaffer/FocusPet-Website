@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import FAQItem from "../components/ui/FAQItem.astro";
+
+const faqs = [
+  {
+    question: "What is Focus Pet?",
+    answer: "Focus Pet is a cozy desktop focus companion that helps you stay productive by rewarding completed focus sessions with decorations, unlockable areas, and a relaxing virtual pet.",
+  },
+  {
+    question: "Is Focus Pet free?",
+    answer: "Yes. The core Focus Pet experience is completely free. An optional Focus Pro upgrade is available for users who want stronger focus tools and additional rewards.",
+  },
+  {
+    question: "What is Focus Pro?",
+    answer: "Focus Pro includes Deep Focus mode. During Deep Focus sessions, distracting apps are automatically closed and blocked websites remain inaccessible until the session ends. Deep Focus sessions also earn Strength, which can be spent on exclusive cosmetic items.",
+  },
+  {
+    question: "Do I need an account?",
+    answer: "No. Focus Pet works perfectly in Guest Mode. Creating an account is optional and only enables cloud backup across devices.",
+  },
+  {
+    question: "Does Focus Pet work offline?",
+    answer: "Yes. Focus Pet is built around a local-first philosophy. Everything works offline, and your progress is saved locally. Cloud Sync is completely optional.",
+  },
+  {
+    question: "Can Focus Pet block distracting websites and apps?",
+    answer: "Yes. You can create custom allow lists and block lists for both websites and desktop applications. During Focus Pro's Deep Focus mode, blocked apps are automatically closed and cannot be reopened until the session finishes.",
+  },
+  {
+    question: "Will my pet die if I stop using the app?",
+    answer: "No. Focus Pet is intentionally not a Tamagotchi. There are no hunger systems, friendship meters, streak penalties, or punishment mechanics. Your pet is a companion, not a responsibility.",
+  },
+  {
+    question: "What can I unlock?",
+    answer: "Completing focus sessions earns Energy. Energy can be spent on decorations, sleeping items, and entirely new areas like the Pool.",
+  },
+  {
+    question: "What operating systems are supported?",
+    answer: "Currently, Focus Pet is available for Windows. Support for additional platforms may be added in the future.",
+  },
+];
+---
+
+<BaseLayout
+  title="FAQ — Focus Pet"
+  description="Everything you need to know about Focus Pet."
+>
+  <Header />
+  <main>
+    <section class="mx-auto max-w-3xl px-6 py-16">
+      <a href="/" class="font-heading font-semibold text-text-secondary no-underline hover:text-accent-blue">
+        &larr; Back to Home
+      </a>
+
+      <div class="mt-8 text-center">
+        <h1 class="text-3xl font-extrabold md:text-4xl">Frequently Asked Questions</h1>
+        <p class="mt-3 text-text-secondary">Everything you need to know about Focus Pet.</p>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-4">
+        {faqs.map((item) => (
+          <FAQItem question={item.question}>{item.answer}</FAQItem>
+        ))}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

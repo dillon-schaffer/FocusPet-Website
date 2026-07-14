@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import capybara from "../../assets/images/logo/capybara.png";
+import Button from "../ui/Button.astro";
+---
+
+<header class="sticky top-0 z-50 border-b border-border bg-background">
+  <div class="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+    <a href="/#top" class="flex items-center gap-2 no-underline">
+      <Image src={capybara} alt="Focus Pet" width={40} height={38} class="h-10 w-auto" />
+      <span class="font-heading text-lg font-bold text-text-primary">Focus Pet</span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex">
+      <a href="/faq" class="font-heading font-semibold no-underline hover:text-accent-blue">FAQ</a>
+      <a href="/roadmap" class="font-heading font-semibold no-underline hover:text-accent-blue">Roadmap</a>
+      <a href="/#focus-pro" class="font-heading font-semibold no-underline hover:text-accent-blue">Focus Pro</a>
+    </nav>
+
+    <Button href="/#download" variant="primary" class="text-sm">Download</Button>
+  </div>
+</header>

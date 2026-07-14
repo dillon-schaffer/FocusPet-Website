@@ -1,0 +1,49 @@
+---
+import Card from "../ui/Card.astro";
+
+const rows = [
+  {
+    icon: "🚫",
+    title: "Automatically closes distracting apps",
+    description: "Apps you've chosen to block are immediately closed and cannot be reopened until your focus session ends.",
+  },
+  {
+    icon: "🌐",
+    title: "Blocks distracting websites completely",
+    description: "Blocked websites stay inaccessible until your session is complete, helping you stay on track.",
+  },
+  {
+    icon: "⭐",
+    title: "Earn exclusive Strength rewards",
+    description: "Deep Focus sessions also earn Strength, which can be spent on exclusive decorations and cosmetic items.",
+  },
+];
+---
+
+<section id="focus-pro" class="mx-auto max-w-6xl px-6 py-16">
+  <Card class="mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
+    <div>
+      <h2 class="text-2xl font-extrabold md:text-3xl">Focus Pro</h2>
+      <p class="mt-3 max-w-xl text-text-secondary">
+        When you need stronger focus, Focus Pro removes temptation instead of relying on willpower.
+      </p>
+    </div>
+
+    <div class="flex w-full flex-col gap-5 text-left">
+      {rows.map((row) => (
+        <div class="flex items-start gap-4">
+          <span class="text-2xl" aria-hidden="true">{row.icon}</span>
+          <div>
+            <h3 class="font-bold">{row.title}</h3>
+            <p class="mt-1 text-text-secondary">{row.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="max-w-xl text-sm text-text-secondary">
+      Focus Pro is completely optional. The free version includes the full Focus Pet experience,
+      while Focus Pro is for people who want stronger accountability.
+    </p>
+  </Card>
+</section>

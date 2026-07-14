@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import IntroHero from "../components/sections/IntroHero.astro";
+import ScrollStory from "../components/sections/ScrollStory.astro";
+import WhyDifferent from "../components/sections/WhyDifferent.astro";
+import FocusProTeaser from "../components/sections/FocusProTeaser.astro";
+import FinalCTA from "../components/sections/FinalCTA.astro";
+---
+
+<BaseLayout
+  title="Focus Pet — A cozy desktop companion that grows while you focus"
+  description="Focus Pet pairs a distraction-free focus timer with a relaxing virtual pet. No guilt, no pressure, just a cozy space that grows alongside you."
+>
+  <Header />
+  <main>
+    <IntroHero />
+    <ScrollStory />
+    <WhyDifferent />
+    <FocusProTeaser />
+    <FinalCTA />
+  </main>
+  <Footer />
+</BaseLayout>

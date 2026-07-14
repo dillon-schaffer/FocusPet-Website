@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets";
+import capybara from "../../assets/images/logo/capybara.png";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mx-auto max-w-6xl px-6 py-12 text-center">
+  <Image src={capybara} alt="Focus Pet" width={32} height={30} class="mx-auto h-8 w-auto" />
+  <p class="mt-4 text-sm text-text-secondary">
+    &copy; {year} Focus Pet. A cozy companion for focusing well.
+  </p>
+</footer>
