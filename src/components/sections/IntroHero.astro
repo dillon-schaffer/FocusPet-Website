@@ -2,8 +2,6 @@
 import { Image } from "astro:assets";
 import capybara from "../../assets/images/logo/capybara.png";
 import Button from "../ui/Button.astro";
-
-const pills = ["🌱 Cozy progression", "🎯 Stay focused", "🧸 No pressure"];
 ---
 
 <section id="top" class="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 py-16 text-center md:py-20">
@@ -16,12 +14,6 @@ const pills = ["🌱 Cozy progression", "🎯 Stay focused", "🧸 No pressure"]
   <p class="max-w-xl text-text-secondary md:text-lg">
     Build peaceful focus habits while decorating cozy spaces and growing alongside your capybara companion.
   </p>
-
-  <div class="flex flex-wrap items-center justify-center gap-3">
-    {pills.map((pill) => (
-      <span class="rounded-pill bg-surface px-4 py-2 text-sm font-heading font-semibold shadow-soft">{pill}</span>
-    ))}
-  </div>
 
   <div class="mt-2 flex flex-wrap items-center justify-center gap-4">
     <Button
