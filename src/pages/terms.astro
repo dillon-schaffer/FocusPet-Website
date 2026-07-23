@@ -1,0 +1,141 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+---
+
+<BaseLayout
+  title="Terms of Service — Focus Pet"
+  description="The terms for downloading and using Focus Pet."
+>
+  <Header />
+  <main>
+    <section class="mx-auto max-w-2xl px-6 py-16">
+      <a href="/" class="font-heading font-semibold text-text-secondary no-underline hover:text-accent-blue">
+        &larr; Back to Home
+      </a>
+
+      <div class="mt-8">
+        <h1 class="text-3xl font-extrabold md:text-4xl">Terms of Service</h1>
+        <p class="mt-3 text-text-secondary">Last updated July 23, 2026.</p>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-8 text-text-secondary">
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Using Focus Pet</h2>
+          <p class="mt-2">
+            Focus Pet is a desktop focus companion for Windows. The core app — the focus timer, website and
+            application blocking, and decorating your space — is free to use for as long as you like. By downloading
+            or using Focus Pet, you agree to these terms.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Application Detection</h2>
+          <p class="mt-2">
+            Focus Pet monitors which applications are running on your computer in order to provide its core
+            focus-tracking features.
+          </p>
+          <p class="mt-3">
+            When you choose one or more applications to focus on, Focus Pet checks the list of currently running
+            applications to determine whether your selected application is open and being used for a focus session.
+            This allows the app to:
+          </p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>Detect when a focus session starts and ends.</li>
+            <li>Track the time you spend focusing.</li>
+            <li>Award in-game progress, achievements, and rewards.</li>
+            <li>Display focus statistics and history.</li>
+            <li>Synchronize your progress across devices if you choose to create an account.</li>
+          </ul>
+          <p class="mt-3">
+            Focus Pet only identifies running applications that are necessary for these features.
+          </p>
+          <p class="mt-3">Focus Pet does not:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>Read the contents of your files or documents.</li>
+            <li>Record your keyboard or mouse activity.</li>
+            <li>Capture screenshots or record your screen.</li>
+            <li>Read the content of websites or applications.</li>
+            <li>Access personal information stored within other applications.</li>
+          </ul>
+          <p class="mt-3">
+            Application detection only occurs while Focus Pet is running and is used solely to provide the features
+            described above.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Accounts and Cloud Saves</h2>
+          <p class="mt-2">
+            Creating a Focus Pet account is optional — Guest Mode gives you the full experience with your progress
+            saved locally on your device. If you choose to create an account, we store information such as your
+            email address, game progress, achievements, settings, and other gameplay-related data so that your
+            progress can be synchronized across supported devices.
+          </p>
+          <p class="mt-3">
+            You are responsible for maintaining the confidentiality of your account credentials and for any activity
+            that occurs under your account.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Focus Pro</h2>
+          <p class="mt-2">
+            Focus Pro is an optional paid upgrade. Purchase and billing details are shown at the time you choose to
+            buy it. Nothing about the free experience changes if you don't purchase Focus Pro.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Third-Party Services</h2>
+          <p class="mt-2">Focus Pet relies on trusted third-party services to provide certain functionality, including:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li><span class="font-semibold text-text-primary">Supabase</span> — user authentication and cloud save synchronization.</li>
+            <li><span class="font-semibold text-text-primary">RevenueCat</span> — subscription and purchase management (where applicable).</li>
+          </ul>
+          <p class="mt-3">These services are governed by their own Terms of Service and Privacy Policies.</p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">App Availability</h2>
+          <p class="mt-2">
+            We continually improve Focus Pet and may release updates, add features, modify existing functionality,
+            or discontinue features at any time.
+          </p>
+          <p class="mt-3">
+            We strive to keep the application working across supported operating systems, but we cannot guarantee
+            compatibility with every hardware or software configuration.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Acceptable Use</h2>
+          <p class="mt-2">You agree not to:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>Attempt to reverse engineer, decompile, or modify the application except where permitted by law.</li>
+            <li>Circumvent or interfere with Focus Pet's intended functionality.</li>
+            <li>Use the application in a manner that could damage, disable, or impair the service.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Changes to these terms</h2>
+          <p class="mt-2">
+            We may update these terms as Focus Pet changes. If we do, we'll update the date at the top of this page.
+            Continuing to use Focus Pet after an update means you accept the revised terms.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Questions</h2>
+          <p class="mt-2">
+            If you have questions about these terms, contact us at
+            <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

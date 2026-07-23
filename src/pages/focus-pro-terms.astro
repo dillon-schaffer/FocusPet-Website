@@ -1,0 +1,152 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+---
+
+<BaseLayout
+  title="Focus Pro Terms of Service — Focus Pet"
+  description="The terms for purchasing and using Focus Pro, the optional upgrade to Focus Pet."
+>
+  <Header />
+  <main>
+    <section class="mx-auto max-w-2xl px-6 py-16">
+      <a href="/" class="font-heading font-semibold text-text-secondary no-underline hover:text-accent-blue">
+        &larr; Back to Home
+      </a>
+
+      <div class="mt-8">
+        <h1 class="text-3xl font-extrabold md:text-4xl">Focus Pro Terms of Service</h1>
+        <p class="mt-3 text-text-secondary">Last updated July 23, 2026.</p>
+      </div>
+
+      <div class="mt-10 flex flex-col gap-8 text-text-secondary">
+        <p>
+          These terms apply specifically to Focus Pro, the optional paid upgrade to Focus Pet. They should be read
+          together with the
+          <a href="/terms">Focus Pet Terms of Service</a>, which cover the free application. If anything here
+          conflicts with the main terms, this page governs Focus Pro specifically.
+        </p>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Overview of Focus Pro</h2>
+          <p class="mt-2">
+            Focus Pro is an optional upgrade to Focus Pet that gives you stronger tools for staying on task. Unlike
+            the free version, Focus Pro can:
+          </p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>Automatically close applications you've selected before a focus session begins.</li>
+            <li>Block websites you've selected while a focus session is running.</li>
+            <li>Keep those restrictions in place until your session ends, based on the settings you choose.</li>
+          </ul>
+          <p class="mt-3">
+            Everything else about Focus Pet — the focus timer, decorating your space, earning Energy — works exactly
+            the same whether or not you have Focus Pro.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Subscription and Purchase Terms</h2>
+          <p class="mt-2">
+            Focus Pro may be offered as a one-time purchase or a recurring subscription, depending on the option you
+            choose at checkout. Pricing and billing details are shown before you complete your purchase.
+          </p>
+          <p class="mt-3">
+            If you choose a subscription, it renews automatically at the end of each billing period unless you cancel
+            before the renewal date. You can manage or cancel your subscription through your account settings or the
+            platform you purchased through. Refunds are handled according to that platform's standard refund policy.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Application Closing</h2>
+          <p class="mt-2">
+            You choose exactly which applications Focus Pro is allowed to close. Focus Pro only closes applications
+            you've selected — it never closes an application you haven't added to your list, and it doesn't touch
+            anything else running on your computer.
+          </p>
+          <p class="mt-3">
+            Because a selected application may close as soon as a focus session starts, you're responsible for
+            saving your work before beginning a session. TryFocusPet isn't responsible for any unsaved work lost
+            because a selected application was closed.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Website Blocking</h2>
+          <p class="mt-2">
+            You choose which websites to block. While a focus session is running, Focus Pro attempts to prevent
+            access to those websites.
+          </p>
+          <p class="mt-3">
+            How well blocking works can vary depending on things outside our control — operating system changes,
+            browser updates, administrator permissions, VPNs, antivirus software, or other third-party software
+            running on your device. We can't guarantee that every website will always be blocked under every system
+            configuration.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">User Responsibility</h2>
+          <p class="mt-2">When you use Focus Pro, you're responsible for:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>Choosing which applications and websites to block.</li>
+            <li>Reviewing your block lists before starting a session.</li>
+            <li>
+              Understanding that enabling blocking may interrupt your normal computer use until the session ends.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Limitations of the Software</h2>
+          <p class="mt-2">
+            Focus Pro is designed to support your focus habits, not to act as an unbreakable system lock. It relies
+            on standard operating system permissions to close applications and block websites, and those permissions
+            can be affected by your system configuration or by other software on your device.
+          </p>
+          <p class="mt-3">
+            Focus Pro is provided as-is, without a guarantee that application closing or website blocking will work
+            perfectly in every situation. We're honest about this because we'd rather set the right expectations than
+            overpromise what the software can do.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Third-Party Services</h2>
+          <p class="mt-2">Focus Pro relies on trusted third-party services, including:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li><span class="font-semibold text-text-primary">Supabase</span> — user authentication and cloud save synchronization.</li>
+            <li><span class="font-semibold text-text-primary">RevenueCat</span> — subscription and purchase management.</li>
+          </ul>
+          <p class="mt-3">These services are governed by their own Terms of Service and Privacy Policies.</p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Updates</h2>
+          <p class="mt-2">
+            We continually improve Focus Pro and may release updates, add features, adjust how application closing or
+            website blocking works, or discontinue features at any time.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Changes to these Terms</h2>
+          <p class="mt-2">
+            We may update these terms as Focus Pro changes. If we do, we'll update the date at the top of this page.
+            Continuing to use Focus Pro after an update means you accept the revised terms.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Contact</h2>
+          <p class="mt-2">
+            If you have questions about these terms, contact us at
+            <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

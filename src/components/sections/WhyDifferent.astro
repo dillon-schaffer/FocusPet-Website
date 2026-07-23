@@ -26,12 +26,26 @@ const points = [
 ---
 
 <section id="why-different" class="mx-auto max-w-5xl px-6 py-20 md:py-28">
-  <div class="max-w-2xl">
+  <div class="mx-auto max-w-2xl text-center">
     <h2 class="text-3xl font-extrabold md:text-4xl">Why Focus Pet feels different</h2>
     <p class="mt-5 text-xl text-text-primary md:text-2xl">{thesis}</p>
   </div>
 
-  <div class="mt-12">
+  <div class="why-stack-wrap relative mt-12">
+    <svg
+      class="why-stack-watermark"
+      data-why-stack-watermark
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <ellipse cx="12" cy="15.5" rx="5.2" ry="4.3" />
+      <ellipse cx="5.6" cy="9.6" rx="2.1" ry="2.6" transform="rotate(-18 5.6 9.6)" />
+      <ellipse cx="10.2" cy="6.2" rx="2.1" ry="2.7" transform="rotate(-6 10.2 6.2)" />
+      <ellipse cx="14.8" cy="6" rx="2.1" ry="2.7" transform="rotate(6 14.8 6)" />
+      <ellipse cx="18.9" cy="9.2" rx="2.1" ry="2.6" transform="rotate(18 18.9 9.2)" />
+    </svg>
+
     {points.map((point, index) => (
       <article class="why-stack-item" data-why-stack-item>
         <div
@@ -60,6 +74,7 @@ const points = [
     line-height: 1;
     color: theme(colors.accent-orange);
     opacity: 0.55;
+    transition: opacity 0.25s ease;
   }
 
   .why-stack-item {
@@ -72,7 +87,36 @@ const points = [
 
   .why-stack-panel {
     will-change: transform;
-    transform-origin: top center;
+    transform-origin: center center;
+    transition: box-shadow 0.25s ease;
+  }
+
+  .why-stack-panel:hover {
+    box-shadow: 0 20px 45px rgba(91, 59, 42, 0.16);
+  }
+
+  .why-stack-panel:hover .why-number {
+    opacity: 0.85;
+  }
+
+  .why-stack-watermark {
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    z-index: 0;
+    height: 22rem;
+    width: 22rem;
+    margin-left: -11rem;
+    color: theme(colors.accent-orange);
+    opacity: 0.05;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  @media (max-width: 767px) {
+    .why-stack-watermark {
+      display: none;
+    }
   }
 </style>
 
@@ -80,6 +124,7 @@ const points = [
   function initWhyStack() {
     const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-why-stack-panel]"));
     const endMarkerEl = document.querySelector<HTMLElement>("[data-why-stack-end]");
+    const watermark = document.querySelector<HTMLElement>("[data-why-stack-watermark]");
     if (cards.length === 0 || !endMarkerEl) return;
     const endMarker = endMarkerEl;
 
@@ -91,13 +136,19 @@ const points = [
     const ITEM_STACK_DISTANCE = 22; // px each subsequent card sits lower than the last
     const BASE_SCALE = 0.92; // final scale of the first card once fully covered
     const ITEM_SCALE = 0.02; // scale increment per card index
+    const MAX_BURIED_TILT = 2.5; // deg, how far a card tilts as it gets buried
+    const HOVER_LIFT = 6; // px extra lift on hover
+    const HOVER_SCALE_BOOST = 0.03; // extra scale on hover
 
     let cardTops: number[] = [];
+    let sectionTop = 0;
     let endTop = 0;
     let ticking = false;
+    let hoveredIndex = -1;
 
     function measure() {
       cardTops = cards.map((card) => card.getBoundingClientRect().top + window.scrollY);
+      sectionTop = cardTops[0] ?? 0;
       endTop = endMarker.getBoundingClientRect().top + window.scrollY;
     }
 
@@ -105,6 +156,7 @@ const points = [
       cards.forEach((card) => {
         card.style.transform = "";
       });
+      if (watermark) watermark.style.transform = "";
     }
 
     function update() {
@@ -130,7 +182,8 @@ const points = [
               ? 1
               : (scrollY - triggerStart) / (triggerEnd - triggerStart);
         const targetScale = BASE_SCALE + i * ITEM_SCALE;
-        const scale = 1 - scaleProgress * (1 - targetScale);
+        let scale = 1 - scaleProgress * (1 - targetScale);
+        const tilt = (i % 2 === 0 ? -1 : 1) * scaleProgress * MAX_BURIED_TILT;
 
         let translateY = 0;
         if (scrollY >= triggerStart && scrollY <= pinEnd) {
@@ -139,8 +192,18 @@ const points = [
           translateY = pinEnd - cardTop + stackOffset;
         }
 
-        card.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+        if (i === hoveredIndex) {
+          translateY -= HOVER_LIFT;
+          scale = Math.min(1, scale + HOVER_SCALE_BOOST);
+        }
+
+        card.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale}) rotate(${tilt}deg)`;
       });
+
+      if (watermark) {
+        const drift = (scrollY - sectionTop) * 0.04;
+        watermark.style.transform = `translate3d(0, ${drift}px, 0)`;
+      }
 
       ticking = false;
     }
@@ -156,6 +219,17 @@ const points = [
       measure();
       onScroll();
     }
+
+    cards.forEach((card, i) => {
+      card.addEventListener("mouseenter", () => {
+        hoveredIndex = i;
+        requestAnimationFrame(update);
+      });
+      card.addEventListener("mouseleave", () => {
+        if (hoveredIndex === i) hoveredIndex = -1;
+        requestAnimationFrame(update);
+      });
+    });
 
     measure();
     update();
