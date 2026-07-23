@@ -7,10 +7,11 @@ export default {
         background: "#F9F4EC",
         surface: "#FFFDF9",
         "text-primary": "#5B3B2A",
-        "text-secondary": "#8B6A57",
+        "text-secondary": "#76594A",
         "accent-orange": "#D79B63",
         "accent-green": "#7CBF8A",
-        "accent-blue": "#79B9E6",
+        "accent-blue": "#1C6AA0",
+        "accent-blue-soft": "#79B9E6",
         border: "#E8D9C8",
       },
       fontFamily: {

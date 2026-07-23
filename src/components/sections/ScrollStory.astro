@@ -1,172 +1,291 @@
 ---
 import { Image } from "astro:assets";
-import Button from "../ui/Button.astro";
-import startImg from "../../../images/Start.png";
-import laterImg from "../../../images/20HoursLater.png";
 import setupImg from "../../../images/FocusSetup.png";
 import sessionImg from "../../../images/FocusSession.png";
 import distractedImg from "../../../images/Distractedv2.png";
 import successImg from "../../../images/SuccessfulSession.png";
+import laterImg from "../../../images/20HoursLater.png";
 import poolImg from "../../../images/Pool.png";
 
 const slides = [
   {
-    image: startImg,
-    alt: "The Focus Pet app open on the backyard screen, with the capybara pet standing next to the Focus button",
-    headline: "A cozy desktop companion that grows while you focus.",
-    caption: "A distraction-free focus timer, paired with a relaxing virtual pet.",
-    cta: true,
-  },
-  {
-    image: laterImg,
-    alt: "The same backyard filled with an apple tree, bushes, and new decorations after many completed focus sessions",
-    headline: "Watch your space grow over time.",
-    caption: "The longer you focus, the cozier your backyard becomes.",
-  },
-  {
+    step: "01",
     image: setupImg,
     alt: "The focus setup screen, showing a 25 minute timer, focus mode, and an allow list of apps and sites",
     headline: "Choose how you want to focus.",
-    caption: "Pick your timer, focus mode, and what to block out.",
+    caption: "Pick your timer, your focus mode, and what to block out.",
   },
   {
+    step: "02",
     image: sessionImg,
     alt: "A focus session in progress, with the capybara peacefully sleeping on a rock in a decorated backyard",
     headline: "Focus together.",
     caption: "While you work, your capybara rests peacefully beside you.",
   },
   {
+    step: "03",
     image: distractedImg,
     alt: "A browser notification showing the Focus Pet capybara startled after a distracting site was visited during a focus session",
     headline: "Gentle accountability.",
-    caption: "Get distracted, earn less Energy. Your pet gets startled, reminding you to stay on track.",
+    caption: "Wander off to a blocked site and your pet notices — you'll just earn a little less Energy for it.",
   },
   {
+    step: "04",
     image: successImg,
     alt: "A completed focus session screen, showing +5 Energy earned and the pet celebrating",
     headline: "Every session earns something.",
-    caption: "Complete sessions to earn Energy and unlock new decorations.",
+    caption: "Cash in the Energy toward whatever you're building next.",
   },
   {
+    step: "05",
+    image: laterImg,
+    alt: "The same backyard filled with an apple tree, bushes, and new decorations after many completed focus sessions",
+    headline: "Watch your space grow over time.",
+    caption: "Twenty focused hours later, that same empty yard has a tree, berries, and a lot more character.",
+  },
+  {
+    step: "06",
     image: poolImg,
     alt: "The Pool area, fully decorated with a palm tree, lounge chair, tiki torches, and pool floats",
     headline: "Unlock entirely new areas.",
-    caption: "Gradually expand your world with entirely new places to decorate.",
+    caption: "Keep going, and eventually there's a whole pool day waiting on the other side.",
   },
 ];
 ---
 
-<section
-  id="story"
-  class="story-track relative"
-  style={`height: ${slides.length * 100}vh`}
-  data-scroll-story
->
-  <div class="story-pin sticky top-20 h-[calc(100vh-5rem)] overflow-hidden">
-    {slides.map((slide, i) => (
-      <div class="story-slide absolute inset-0 flex flex-col items-center justify-center px-6 text-center" data-slide>
-        <div class="overflow-hidden rounded-image shadow-soft">
-          <Image
-            src={slide.image}
-            alt={slide.alt}
-            class="h-auto max-h-[52vh] max-w-[85vw] w-auto object-contain md:max-h-[62vh] md:max-w-[78vw]"
-            loading={i === 0 ? "eager" : "lazy"}
-            fetchpriority={i === 0 ? "high" : "auto"}
-          />
-        </div>
-        <h2 class="mt-5 max-w-3xl text-3xl font-extrabold leading-tight md:text-5xl">
-          {slide.headline}
-        </h2>
-        <p class="mt-2 max-w-xl text-base text-text-secondary md:mt-3 md:text-xl">{slide.caption}</p>
-      </div>
-    ))}
+<section id="story" class="mx-auto max-w-[100rem] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+  <div class="mx-auto max-w-2xl text-center">
+    <span class="story-kicker">The story</span>
+    <h2 class="mt-3 text-3xl font-extrabold md:text-4xl">A focus session, start to finish</h2>
+    <p class="mt-4 text-text-secondary md:text-lg">
+      Six small moments, in order — from opening the app to a whole new place to relax.
+    </p>
   </div>
+
+  <div class="story-path relative mt-16 md:mt-24" data-story-path>
+    <div class="story-line-track absolute inset-y-0 left-1/2 hidden w-[3px] -translate-x-1/2 md:block" aria-hidden="true"></div>
+    <div class="story-line-fill absolute inset-y-0 left-1/2 hidden w-[3px] -translate-x-1/2 md:block" aria-hidden="true" data-story-fill></div>
+
+    <div class="flex flex-col gap-16 md:gap-28 lg:gap-32">
+      {slides.map((slide, index) => (
+        <div class="story-node relative" data-story-node>
+          <div class="story-marker absolute left-1/2 top-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 md:flex" aria-hidden="true">
+            <span class="story-marker-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="story-paw">
+                <ellipse cx="12" cy="15.5" rx="5.2" ry="4.3" />
+                <ellipse cx="5.6" cy="9.6" rx="2.1" ry="2.6" transform="rotate(-18 5.6 9.6)" />
+                <ellipse cx="10.2" cy="6.2" rx="2.1" ry="2.7" transform="rotate(-6 10.2 6.2)" />
+                <ellipse cx="14.8" cy="6" rx="2.1" ry="2.7" transform="rotate(6 14.8 6)" />
+                <ellipse cx="18.9" cy="9.2" rx="2.1" ry="2.6" transform="rotate(18 18.9 9.2)" />
+              </svg>
+            </span>
+          </div>
+
+          <div class="story-card grid items-center gap-10 md:grid-cols-2 md:gap-16 lg:gap-24">
+            <div
+              class={`story-photo relative mx-auto w-full max-w-[430px] md:max-w-[650px] lg:max-w-[740px] ${
+                index % 2 === 1
+                  ? "md:order-2 md:-ml-14 md:rotate-[2deg] lg:-ml-20"
+                  : "md:order-1 md:-mr-14 md:rotate-[-2deg] lg:-mr-20"
+              }`}
+            >
+              <div class="overflow-hidden rounded-image">
+                <Image src={slide.image} alt={slide.alt} class="h-auto w-full object-contain" loading="lazy" />
+              </div>
+            </div>
+
+            <div
+              class={`relative text-center ${
+                index % 2 === 1
+                  ? "md:order-1 md:mr-6 md:text-right lg:mr-10"
+                  : "md:order-2 md:ml-6 md:text-left lg:ml-10"
+              }`}
+            >
+              <span class="story-step-label">Step {slide.step}</span>
+              <h3 class="mt-2 text-2xl font-extrabold leading-snug md:mt-0 md:text-4xl lg:text-5xl">{slide.headline}</h3>
+              <p
+                class={`mt-3 max-w-xl text-text-secondary md:text-xl mx-auto ${
+                  index % 2 === 1 ? "md:ml-auto md:mr-0" : "md:mr-auto md:ml-0"
+                }`}
+              >
+                {slide.caption}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <noscript>
+    <style>
+      .story-node {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
 </section>
 
 <style>
-  .story-slide {
+  .story-kicker {
+    display: inline-block;
+    font-family: theme(fontFamily.heading);
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: theme(colors.accent-orange);
+  }
+
+  .story-line-track {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      theme(colors.border) 0,
+      theme(colors.border) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+    border-radius: 999px;
+  }
+
+  .story-line-fill {
+    background: theme(colors.accent-orange);
+    border-radius: 999px;
+    transform: scaleY(0);
+    transform-origin: top;
+    will-change: transform;
+  }
+
+  .story-marker-badge {
+    display: flex;
+    height: 3rem;
+    width: 3rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    cursor: pointer;
+    background: theme(colors.surface);
+    border: 2px solid theme(colors.border);
+    box-shadow: theme(boxShadow.soft);
+    color: theme(colors.text-secondary);
+    transform: scale(0.75);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.4s ease, color 0.4s ease;
+  }
+
+  .story-paw {
+    height: 1.15rem;
+    width: 1.15rem;
+  }
+
+  .story-step-label {
+    display: inline-block;
+    font-family: theme(fontFamily.heading);
+    font-weight: 800;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: theme(colors.accent-orange);
+  }
+
+  .story-photo {
+    padding: 0.5rem;
+    background: theme(colors.surface);
+    border-radius: theme(borderRadius.image);
+    box-shadow: theme(boxShadow.soft);
+    transition: transform 0.35s ease;
+  }
+
+  .story-marker:hover ~ .story-card .story-photo {
+    transform: rotate(0deg) translateY(-4px);
+  }
+
+  .story-node {
     opacity: 0;
-    transform: scale(0.96);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    pointer-events: none;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
 
-  .story-slide.is-active {
+  .story-node.is-visible {
     opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
+    transform: translateY(0);
   }
 
-  @media (max-width: 767px), (prefers-reduced-motion: reduce) {
-    .story-track {
-      height: auto !important;
-    }
+  .story-node.is-visible .story-marker-badge {
+    transform: scale(1);
+    border-color: theme(colors.accent-orange);
+    color: theme(colors.accent-orange);
+  }
 
-    .story-pin {
-      position: static !important;
-      height: auto !important;
-    }
-
-    .story-slide {
-      position: relative !important;
+  @media (prefers-reduced-motion: reduce) {
+    .story-node,
+    .story-marker-badge {
       opacity: 1 !important;
       transform: none !important;
-      pointer-events: auto !important;
-      padding-block: 3rem;
+      transition: none !important;
+    }
+
+    .story-line-fill {
+      transform: scaleY(1) !important;
     }
   }
 </style>
 
 <script>
-  function initScrollStory() {
-    const root = document.querySelector("[data-scroll-story]");
-    if (!(root instanceof HTMLElement)) return;
+  function initStoryPath() {
+    const path = document.querySelector("[data-story-path]");
+    const fill = document.querySelector("[data-story-fill]");
+    const nodes = Array.from(document.querySelectorAll("[data-story-node]"));
+    if (!(path instanceof HTMLElement) || nodes.length === 0) return;
 
-    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!isDesktop || reduceMotion) return;
 
-    const pin = root.querySelector(".story-pin");
-    const slides = Array.from(root.querySelectorAll("[data-slide]"));
-    const total = slides.length;
-    if (!(pin instanceof HTMLElement) || total === 0) return;
+    if ("IntersectionObserver" in window && !reduceMotion) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.3, rootMargin: "0px 0px -10% 0px" }
+      );
+      nodes.forEach((node) => observer.observe(node));
+    } else {
+      nodes.forEach((node) => node.classList.add("is-visible"));
+    }
 
-    slides[0].classList.add("is-active");
+    if (!(fill instanceof HTMLElement) || reduceMotion) return;
 
     let ticking = false;
 
-    function update() {
-      const el = root as HTMLElement;
-      const pinEl = pin as HTMLElement;
-      const rect = el.getBoundingClientRect();
-      const scrollable = el.offsetHeight - pinEl.offsetHeight;
-      const progress = scrollable > 0 ? Math.min(1, Math.max(0, -rect.top / scrollable)) : 0;
-      let activeIndex = Math.floor(progress * total);
-      if (activeIndex >= total) activeIndex = total - 1;
-      if (activeIndex < 0) activeIndex = 0;
-
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("is-active", i === activeIndex);
-      });
-
+    function updateFill() {
+      const rect = (path as HTMLElement).getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const travelled = viewportHeight * 0.8 - rect.top;
+      const total = rect.height + viewportHeight * 0.4;
+      const progress = total > 0 ? Math.min(1, Math.max(0, travelled / total)) : 0;
+      (fill as HTMLElement).style.transform = `scaleY(${progress})`;
       ticking = false;
     }
 
     function onScroll() {
       if (!ticking) {
-        requestAnimationFrame(update);
+        requestAnimationFrame(updateFill);
         ticking = true;
       }
     }
 
-    update();
+    updateFill();
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initScrollStory);
+    document.addEventListener("DOMContentLoaded", initStoryPath);
   } else {
-    initScrollStory();
+    initStoryPath();
   }
 </script>

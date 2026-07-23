@@ -1,38 +1,171 @@
 ---
-import Card from "../ui/Card.astro";
+const thesis = "Most focus apps try to guilt you into working. Focus Pet just hangs out while you do.";
 
 const points = [
   {
-    title: "💻 Built for your desktop",
-    description: "Most focus apps live on your phone. Focus Pet is built for your computer, where most distractions actually happen.",
+    title: "It lives where the distraction is",
+    description:
+      "Most focus tools live on your phone — which was never really the problem. Focus Pet sits right on your desktop, next to the tabs and apps you actually get pulled into.",
   },
   {
-    title: "⚡ Distractions have real consequences",
-    description: "Unlike most gamified focus apps, distractions actually affect your rewards. Every distraction reduces the Energy you earn for that session, encouraging you to stay focused.",
+    title: "Distractions have a real cost",
+    description:
+      "Wander off during a session and your capybara notices. Nothing dramatic — you just earn a little less Energy, which is usually enough to nudge you back.",
   },
   {
-    title: "🌿 Gentle motivation that works",
-    description: "Stay focused to earn Energy and unlock new decorations. Every session helps you build a cozy world alongside your capybara.",
+    title: "Progress you can actually see",
+    description:
+      "No streaks to protect, no guilt for missing a day. Just a backyard that slowly fills up with trees, decorations, and new areas the more you focus.",
   },
   {
-    title: "🏡 A companion, not a responsibility",
-    description: "No hunger bars, friendship meters, or streak punishment. Your capybara quietly keeps you company while you focus.",
+    title: "A companion, not a responsibility",
+    description:
+      "It doesn't need feeding, and it won't complain if you skip a week. It's just there — usually asleep on a rock — whenever you sit down to work.",
   },
 ];
 ---
 
-<section id="why-different" class="mx-auto max-w-6xl px-6 py-16">
-  <div class="mx-auto max-w-2xl text-center">
+<section id="why-different" class="mx-auto max-w-5xl px-6 py-20 md:py-28">
+  <div class="max-w-2xl">
     <h2 class="text-3xl font-extrabold md:text-4xl">Why Focus Pet feels different</h2>
+    <p class="mt-5 text-xl text-text-primary md:text-2xl">{thesis}</p>
   </div>
 
-  <div class="mt-12 grid gap-6 sm:grid-cols-2">
-    {points.map((point) => (
-      <Card class="text-left">
-        <span class="text-3xl" aria-hidden="true">{point.icon}</span>
-        <h3 class="mt-3 text-lg font-bold">{point.title}</h3>
-        <p class="mt-2 text-text-secondary">{point.description}</p>
-      </Card>
+  <div class="mt-12">
+    {points.map((point, index) => (
+      <article class="why-stack-item" data-why-stack-item>
+        <div
+          class="why-stack-panel mx-auto flex w-full max-w-2xl items-center gap-5 rounded-card bg-surface p-7 shadow-soft md:min-h-[15rem] md:p-10"
+          data-why-stack-panel
+          style={`z-index: ${index + 1};`}
+        >
+          <span class="why-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+          <div>
+            <h3 class="font-heading text-lg font-bold md:text-xl">{point.title}</h3>
+            <p class="mt-2 text-text-secondary md:text-lg">{point.description}</p>
+          </div>
+        </div>
+      </article>
     ))}
+    <div data-why-stack-end aria-hidden="true"></div>
   </div>
 </section>
+
+<style>
+  .why-number {
+    flex-shrink: 0;
+    font-family: theme(fontFamily.heading);
+    font-weight: 800;
+    font-size: 1.75rem;
+    line-height: 1;
+    color: theme(colors.accent-orange);
+    opacity: 0.55;
+  }
+
+  .why-stack-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .why-stack-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .why-stack-panel {
+    will-change: transform;
+    transform-origin: top center;
+  }
+</style>
+
+<script>
+  function initWhyStack() {
+    const cards = Array.from(document.querySelectorAll<HTMLElement>("[data-why-stack-panel]"));
+    const endMarkerEl = document.querySelector<HTMLElement>("[data-why-stack-end]");
+    if (cards.length === 0 || !endMarkerEl) return;
+    const endMarker = endMarkerEl;
+
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+    const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const STACK_POSITION = 160; // px from top where a card locks into place
+    const SCALE_END_POSITION = 40; // px from top where the shrink finishes
+    const ITEM_STACK_DISTANCE = 22; // px each subsequent card sits lower than the last
+    const BASE_SCALE = 0.92; // final scale of the first card once fully covered
+    const ITEM_SCALE = 0.02; // scale increment per card index
+
+    let cardTops: number[] = [];
+    let endTop = 0;
+    let ticking = false;
+
+    function measure() {
+      cardTops = cards.map((card) => card.getBoundingClientRect().top + window.scrollY);
+      endTop = endMarker.getBoundingClientRect().top + window.scrollY;
+    }
+
+    function reset() {
+      cards.forEach((card) => {
+        card.style.transform = "";
+      });
+    }
+
+    function update() {
+      if (!desktopQuery.matches || reduceMotionQuery.matches) {
+        reset();
+        ticking = false;
+        return;
+      }
+
+      const scrollY = window.scrollY;
+      const pinEnd = endTop - window.innerHeight / 2;
+
+      cards.forEach((card, i) => {
+        const cardTop = cardTops[i];
+        const stackOffset = STACK_POSITION + ITEM_STACK_DISTANCE * i;
+        const triggerStart = cardTop - stackOffset;
+        const triggerEnd = cardTop - SCALE_END_POSITION;
+
+        const scaleProgress =
+          scrollY < triggerStart
+            ? 0
+            : scrollY > triggerEnd
+              ? 1
+              : (scrollY - triggerStart) / (triggerEnd - triggerStart);
+        const targetScale = BASE_SCALE + i * ITEM_SCALE;
+        const scale = 1 - scaleProgress * (1 - targetScale);
+
+        let translateY = 0;
+        if (scrollY >= triggerStart && scrollY <= pinEnd) {
+          translateY = scrollY - cardTop + stackOffset;
+        } else if (scrollY > pinEnd) {
+          translateY = pinEnd - cardTop + stackOffset;
+        }
+
+        card.style.transform = `translate3d(0, ${translateY}px, 0) scale(${scale})`;
+      });
+
+      ticking = false;
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }
+
+    function onResize() {
+      measure();
+      onScroll();
+    }
+
+    measure();
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initWhyStack);
+  } else {
+    initWhyStack();
+  }
+</script>

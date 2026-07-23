@@ -22,6 +22,10 @@
   a {
     @apply text-text-primary underline decoration-accent-blue decoration-2 underline-offset-2 transition-colors hover:text-accent-blue;
   }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-accent-orange;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

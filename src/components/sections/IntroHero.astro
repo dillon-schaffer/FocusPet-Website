@@ -1,28 +1,26 @@
 ---
-import { Image } from "astro:assets";
-import capybara from "../../assets/images/logo/capybara.png";
 import Button from "../ui/Button.astro";
 ---
 
-<section id="top" class="mx-auto flex max-w-3xl flex-col items-center gap-6 px-6 py-16 text-center md:py-20">
-  <div>
-    <h1 class="mt-2 text-3xl font-extrabold leading-tight md:text-5xl">
+<section id="top" class="mx-auto max-w-5xl px-6 py-20 md:py-28">
+  <div class="mx-auto flex max-w-2xl flex-col items-center gap-6 text-center">
+    <h1 class="text-3xl font-extrabold leading-tight md:text-5xl">
       A cozy desktop companion that helps you focus
     </h1>
-  </div>
 
-  <p class="max-w-xl text-text-secondary md:text-lg">
-    Build peaceful focus habits while decorating cozy spaces and growing alongside your capybara companion.
-  </p>
+    <p class="max-w-xl text-text-secondary md:text-lg">
+      Build peaceful focus habits while decorating cozy spaces and growing alongside your capybara companion.
+    </p>
 
-  <div class="mt-2 flex flex-wrap items-center justify-center gap-4">
-    <Button
-      href="https://github.com/dillon-schaffer/FocusPet-Releases/releases/latest"
-      variant="primary"
-      data-download-button
-    >
-      Download for Windows
-    </Button>
-    <Button href="#story" variant="outline">See how it works</Button>
+    <div class="mt-2 flex flex-wrap items-center justify-center gap-4">
+      <Button
+        href="https://github.com/dillon-schaffer/FocusPet-Releases/releases/latest"
+        variant="primary"
+        data-download-button
+      >
+        Download for Windows
+      </Button>
+      <Button href="#story" variant="outline">See how it works</Button>
+    </div>
   </div>
 </section>

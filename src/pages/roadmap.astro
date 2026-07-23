@@ -62,30 +62,31 @@ const futureIdeas = [
 
       <div class="mt-16">
         <h2 class="text-2xl font-extrabold md:text-3xl">Available Today</h2>
-        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul class="mt-6 flex flex-wrap gap-3">
           {available.map((item) => (
-            <Card class="flex items-center gap-3 py-4">
-              <span class="text-xl text-accent-green" aria-hidden="true">✅</span>
-              <span class="font-heading font-semibold">{item}</span>
-            </Card>
+            <li class="flex items-center gap-2 rounded-pill border border-accent-green/30 bg-accent-green/10 px-4 py-2">
+              <span class="text-accent-green" aria-hidden="true">✓</span>
+              <span class="font-heading text-sm font-semibold">{item}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <div class="mt-16">
         <h2 class="text-2xl font-extrabold md:text-3xl">Currently in Development</h2>
-        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <ul class="mt-6 flex flex-wrap gap-3">
           {inDevelopment.map((item) => (
-            <Card class="flex items-center gap-3 py-4">
-              <span class="text-xl" aria-hidden="true">🚧</span>
-              <span class="font-heading font-semibold">{item}</span>
-            </Card>
+            <li class="flex items-center gap-2 rounded-pill border border-accent-orange/30 bg-accent-orange/10 px-4 py-2">
+              <span class="text-accent-orange" aria-hidden="true">🔧</span>
+              <span class="font-heading text-sm font-semibold">{item}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <div class="mt-16">
         <h2 class="text-2xl font-extrabold md:text-3xl">Planned Areas</h2>
+        <p class="mt-2 text-text-secondary">Whole new places to decorate, further out on the horizon.</p>
         <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {plannedAreas.map((area) => (
             <Card class="text-left">
@@ -98,11 +99,14 @@ const futureIdeas = [
 
       <div class="mt-16">
         <h2 class="text-2xl font-extrabold md:text-3xl">Future Ideas</h2>
-        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <p class="mt-2 text-text-secondary">Not yet planned, just things we're thinking about.</p>
+        <ul class="mt-6 flex flex-wrap gap-3">
           {futureIdeas.map((item) => (
-            <Card class="py-4 text-center font-heading font-semibold">{item}</Card>
+            <li class="rounded-pill border border-border px-4 py-2 font-heading text-sm font-semibold text-text-secondary">
+              {item}
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
       <p class="mt-16 text-center text-text-secondary">
