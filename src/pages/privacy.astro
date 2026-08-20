@@ -17,109 +17,293 @@ import Footer from "../components/layout/Footer.astro";
 
       <div class="mt-8">
         <h1 class="text-3xl font-extrabold md:text-4xl">Privacy Policy</h1>
-        <p class="mt-3 text-text-secondary">Last updated July 23, 2026.</p>
+        <p class="mt-3 text-text-secondary">Last updated August 20, 2026.</p>
       </div>
 
       <div class="mt-10 flex flex-col gap-8 text-text-secondary">
-        <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Information We Collect</h2>
-          <p class="mt-2">Focus Pet collects only the information necessary to provide its features.</p>
-          <p class="mt-3">Depending on how you use the app, this may include:</p>
-          <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>Your email address (if you create an account).</li>
-            <li>Your game progress, achievements, settings, and statistics.</li>
-            <li>Information about your active focus sessions.</li>
-            <li>The names of running applications required to determine whether your selected focus application is active.</li>
-          </ul>
-        </div>
+        <p>
+          Focus Pet is designed to be a local-first focus and productivity application. This Privacy Policy
+          explains what information Focus Pet processes, what information may be stored or synchronized, and
+          how third-party services are used.
+        </p>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">How Application Detection Works</h2>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Information We Collect and Process</h2>
           <p class="mt-2">
-            Focus Pet checks which applications are currently running on your computer in order to detect when a
-            focus session is active.
+            The information Focus Pet processes depends on the features you choose to use.
           </p>
-          <p class="mt-3">This information is used solely to:</p>
+
+          <h3 class="mt-6 font-heading text-base font-bold text-text-primary">Account Information</h3>
+          <p class="mt-2">
+            Creating an account is optional. If you create a Focus Pet account, we may process information such
+            as:
+          </p>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>determine whether your selected focus application is running;</li>
-            <li>track focus duration;</li>
-            <li>award in-game progress and achievements;</li>
-            <li>generate focus statistics.</li>
-          </ul>
-          <p class="mt-3">Focus Pet does not read or collect:</p>
-          <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>the contents of files or documents;</li>
-            <li>the contents of websites;</li>
-            <li>text entered into applications;</li>
-            <li>passwords or personal credentials;</li>
-            <li>keyboard or mouse input;</li>
-            <li>screenshots or screen recordings.</li>
+            <li>your email address;</li>
+            <li>authentication information necessary to sign you in and maintain your account;</li>
+            <li>account and session information necessary to keep your account signed in securely;</li>
+            <li>a device identifier used to manage Focus Pet's single-active-device account system.</li>
           </ul>
           <p class="mt-3">
-            Focus Pet only identifies the running applications necessary for its focus-tracking functionality.
+            You can use Focus Pet in guest mode without creating an account. Guest mode does not use cloud
+            backup.
+          </p>
+
+          <h3 class="mt-6 font-heading text-base font-bold text-text-primary">
+            Focus and Productivity Information
+          </h3>
+          <p class="mt-2">During a focus session, Focus Pet may process information such as:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>the active application and its application identifier;</li>
+            <li>the active website domain when using a supported browser;</li>
+            <li>your allowed and blocked applications;</li>
+            <li>your allowed and blocked website domains;</li>
+            <li>focus-session duration and completion status;</li>
+            <li>distraction and restricted-event counts;</li>
+            <li>focus mode and related session settings;</li>
+            <li>rewards, streaks, and focus statistics derived from your sessions.</li>
+          </ul>
+          <p class="mt-3">
+            This information is used to determine whether your current activity matches the focus rules you
+            selected and to provide Focus Pet's focus-session, reward, statistics, and Deep Focus features.
           </p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Cloud Saves</h2>
+          <h2 class="font-heading text-lg font-bold text-text-primary">
+            How Application and Website Detection Works
+          </h2>
           <p class="mt-2">
-            If you create a Focus Pet account, your gameplay data may be securely stored using our cloud services so
-            your progress can be synchronized across supported devices.
+            Focus Pet needs to determine which application is currently active while a focus session is
+            running.
           </p>
-          <p class="mt-3">This may include:</p>
+          <p class="mt-3">
+            On supported browsers, Focus Pet may also determine the domain of the website currently active in
+            the browser so that website Allow Lists and Block Lists can work.
+          </p>
+          <p class="mt-3">
+            Depending on your operating system, Focus Pet uses operating-system functionality such as Windows
+            application APIs or macOS Accessibility APIs to perform this detection.
+          </p>
+          <p class="mt-3">Focus Pet does <strong class="text-text-primary">not</strong> use this functionality to read or collect:</p>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>game progress;</li>
-            <li>decorations and inventory;</li>
-            <li>achievements;</li>
-            <li>focus statistics;</li>
-            <li>settings;</li>
-            <li>account information associated with your email address.</li>
+            <li>the contents of your files or documents;</li>
+            <li>the contents of webpages;</li>
+            <li>text you enter into applications or websites;</li>
+            <li>passwords or other personal credentials;</li>
+            <li>private messages;</li>
+            <li>keystrokes;</li>
+            <li>screenshots;</li>
+            <li>screen recordings.</li>
           </ul>
+          <p class="mt-3">
+            Focus Pet's website rules operate on domains rather than storing full browsing URLs. For example,
+            Focus Pet may use <code class="rounded bg-surface px-1 py-0.5 font-mono text-sm">youtube.com</code>
+            to evaluate a website rule rather than storing the full page URL you visited.
+          </p>
+          <p class="mt-3">
+            Application and website detection is used for Focus Pet's focus features and is not intended to
+            create a general browsing or computer-activity history.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Local Storage</h2>
+          <p class="mt-2">
+            Focus Pet is designed to work locally on your computer, including in guest mode.
+          </p>
+          <p class="mt-3">
+            Application data may be stored locally using Focus Pet's local database and other local application
+            storage. Depending on the features you use, locally stored information may include:
+          </p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>game progress and currencies;</li>
+            <li>streaks and focus statistics;</li>
+            <li>completed focus-session information;</li>
+            <li>pets and selected skins;</li>
+            <li>inventory and decorations;</li>
+            <li>backyard configuration;</li>
+            <li>focus settings;</li>
+            <li>allowed and blocked applications;</li>
+            <li>allowed and blocked website domains;</li>
+            <li>Focus Pro entitlement information cached for offline use;</li>
+            <li>other settings required for application functionality.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Cloud Backup and Accounts</h2>
+          <p class="mt-2">
+            If you choose to create and use a Focus Pet account, Focus Pet can back up supported game and
+            settings data to the cloud so that your progress can be restored when you sign in on a supported
+            device.
+          </p>
+          <p class="mt-3">Cloud backup may include information such as:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>game progress and currencies;</li>
+            <li>streak and focus totals;</li>
+            <li>pet information and selected skin;</li>
+            <li>owned skins;</li>
+            <li>inventory;</li>
+            <li>backyard/decorations;</li>
+            <li>focus settings;</li>
+            <li>allowed and blocked application identifiers;</li>
+            <li>allowed and blocked website domains.</li>
+          </ul>
+          <p class="mt-3">
+            Focus Pet accounts currently use a single-active-device model. You may use your account on different
+            devices over time, but only one device may hold the active authenticated Focus Pet session at a
+            time.
+          </p>
+          <p class="mt-3">
+            A persistent installation identifier may be used to identify the Focus Pet installation
+            participating in this account-session system.
+          </p>
+          <p class="mt-3">
+            Cloud backup is optional. If you do not create an account, you can continue using Focus Pet in guest
+            mode without cloud backup.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Focus Pro and Payments</h2>
+          <p class="mt-2">Focus Pet offers optional paid Focus Pro plans.</p>
+          <p class="mt-3">
+            Payments and subscription billing are handled through
+            <strong class="text-text-primary">Stripe</strong>.
+          </p>
+          <p class="mt-3">
+            When you choose to purchase Focus Pro, Focus Pet may open Stripe Checkout in your web browser.
+            Subscription management, payment-method management, and billing information may also be handled
+            through Stripe's Customer Portal.
+          </p>
+          <p class="mt-3">
+            Stripe is responsible for processing payment information and managing billing events such as
+            purchases, subscriptions, renewals, cancellations, and payment failures.
+          </p>
+          <p class="mt-3">
+            Focus Pet uses verified billing information from Stripe to determine whether an account has Focus
+            Pro access. Focus Pet's cloud services store the resulting entitlement and subscription status
+            needed to provide Focus Pro features, and the desktop application may keep a local cached copy so
+            entitlement information can remain available offline.
+          </p>
+          <p class="mt-3">
+            Focus Pet does not need to directly store your full payment-card details in its own application
+            database.
+          </p>
         </div>
 
         <div>
           <h2 class="font-heading text-lg font-bold text-text-primary">Third-Party Services</h2>
-          <p class="mt-2">We use trusted third-party providers to operate certain features of Focus Pet. These include:</p>
+          <p class="mt-2">
+            Focus Pet currently uses third-party service providers including:
+          </p>
+
+          <h3 class="mt-6 font-heading text-base font-bold text-text-primary">Supabase</h3>
+          <p class="mt-2">Supabase is used for features including:</p>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li><span class="font-semibold text-text-primary">Supabase</span> for authentication and cloud save services.</li>
-            <li><span class="font-semibold text-text-primary">RevenueCat</span> for subscription and purchase management (if applicable).</li>
+            <li>account authentication;</li>
+            <li>cloud backup and restore;</li>
+            <li>account/session coordination;</li>
+            <li>Focus Pro entitlement information;</li>
+            <li>server-side functions that support Focus Pro billing workflows.</li>
           </ul>
-          <p class="mt-3">These providers process data in accordance with their own privacy policies.</p>
+
+          <h3 class="mt-6 font-heading text-base font-bold text-text-primary">Stripe</h3>
+          <p class="mt-2">Stripe is used for:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>Focus Pro Checkout;</li>
+            <li>recurring subscription billing;</li>
+            <li>one-time Focus Pro purchases where offered;</li>
+            <li>payment processing;</li>
+            <li>subscription status;</li>
+            <li>payment-method management;</li>
+            <li>billing and subscription management through Stripe's Customer Portal.</li>
+          </ul>
+
+          <p class="mt-3">
+            These providers may process information according to their own privacy policies and terms.
+          </p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">How We Use Your Information</h2>
-          <p class="mt-2">We use collected information to:</p>
+          <h2 class="font-heading text-lg font-bold text-text-primary">How We Use Information</h2>
+          <p class="mt-2">We use information processed by Focus Pet to:</p>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>provide and improve Focus Pet;</li>
-            <li>synchronize your game progress;</li>
-            <li>authenticate your account;</li>
-            <li>maintain application functionality;</li>
+            <li>provide focus-session functionality;</li>
+            <li>evaluate the Allow Lists and Block Lists you configure;</li>
+            <li>provide Normal Focus and Deep Focus behavior;</li>
+            <li>calculate rewards, streaks, and focus statistics;</li>
+            <li>save your game progress and settings;</li>
+            <li>synchronize supported data when you choose to use a Focus Pet account;</li>
+            <li>authenticate and maintain your account;</li>
+            <li>manage Focus Pro access;</li>
+            <li>provide and maintain application functionality;</li>
             <li>provide customer support;</li>
-            <li>diagnose bugs and improve stability.</li>
+            <li>diagnose bugs and improve reliability and stability;</li>
+            <li>protect account and service security.</li>
           </ul>
           <p class="mt-3">We do not sell your personal information.</p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Data Retention</h2>
-          <p class="mt-2">
-            We retain your account and gameplay data only for as long as necessary to provide the services you use
-            or until you request that your account be deleted, unless a longer retention period is required by law.
+          <h2 class="font-heading text-lg font-bold text-text-primary">
+            Information We Do Not Intend to Collect
+          </h2>
+          <p class="mt-2">Focus Pet is not designed to collect or store:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>the contents of your documents or files;</li>
+            <li>webpage contents;</li>
+            <li>full browsing history;</li>
+            <li>full browsing URLs as focus-rule history;</li>
+            <li>passwords entered into other applications or websites;</li>
+            <li>private messages;</li>
+            <li>keystrokes;</li>
+            <li>screenshots;</li>
+            <li>screen recordings.</li>
+          </ul>
+          <p class="mt-3">
+            Operating-system permissions used for focus detection are used to provide Focus Pet's focus
+            functionality and are not intended for general surveillance of your computer activity.
           </p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Your Rights</h2>
-          <p class="mt-2">Depending on your location, you may have the right to:</p>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Data Retention</h2>
+          <p class="mt-2">
+            We retain account and cloud data for as long as reasonably necessary to provide the Focus Pet
+            services you use, comply with legal obligations, resolve disputes, enforce agreements, and maintain
+            service security.
+          </p>
+          <p class="mt-3">
+            Local data may remain on a device until it is removed through Focus Pet, the application's available
+            account/data controls, or removal of the application's local data.
+          </p>
+          <p class="mt-3">
+            Some information processed by third-party providers such as Stripe or Supabase may also be retained
+            according to their applicable legal obligations, retention practices, and privacy policies.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Your Choices and Rights</h2>
+          <p class="mt-2">
+            Depending on where you live, you may have rights regarding your personal information, including the
+            right to:
+          </p>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>access your personal information;</li>
-            <li>correct inaccurate information;</li>
-            <li>request deletion of your account and associated data;</li>
-            <li>withdraw consent where applicable.</li>
+            <li>request access to personal information associated with your account;</li>
+            <li>request correction of inaccurate personal information;</li>
+            <li>request deletion of eligible account information;</li>
+            <li>withdraw consent where processing is based on consent;</li>
+            <li>exercise other privacy rights available under applicable law.</li>
           </ul>
           <p class="mt-3">
-            To exercise these rights, contact us at
+            You may also choose to use Focus Pet without creating an account, in which case cloud backup and
+            account-based features are not used.
+          </p>
+          <p class="mt-3">
+            To make a privacy request, contact us at
             <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>.
           </p>
         </div>
@@ -127,22 +311,51 @@ import Footer from "../components/layout/Footer.astro";
         <div>
           <h2 class="font-heading text-lg font-bold text-text-primary">Security</h2>
           <p class="mt-2">
-            We take reasonable measures to protect your information from unauthorized access, alteration,
-            disclosure, or destruction. However, no method of electronic storage or transmission over the internet is
-            completely secure, and we cannot guarantee absolute security.
+            We use reasonable technical and organizational measures intended to protect information from
+            unauthorized access, alteration, disclosure, or destruction.
+          </p>
+          <p class="mt-3">
+            Focus Pet's architecture is designed to keep sensitive desktop activity processing limited to what
+            is necessary for focus functionality, and cloud account access is subject to authentication and
+            access controls.
+          </p>
+          <p class="mt-3">
+            However, no method of electronic storage or transmission over the internet can be guaranteed to be
+            completely secure.
           </p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Changes to this policy</h2>
-          <p class="mt-2">If this policy changes, we'll update the date at the top of this page.</p>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Children's Privacy</h2>
+          <p class="mt-2">
+            Focus Pet is not intended to knowingly collect personal information from children in violation of
+            applicable law.
+          </p>
+          <p class="mt-3">
+            If you believe a child has provided personal information to Focus Pet in circumstances where it
+            should not have been collected, contact us at
+            <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>.
+          </p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Questions</h2>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Changes to This Privacy Policy</h2>
+          <p class="mt-2">We may update this Privacy Policy as Focus Pet changes.</p>
+          <p class="mt-3">
+            When we make changes, we will update the <strong class="text-text-primary">Last updated</strong>
+            date at the top of this page. If a change materially affects how personal information is handled,
+            we may provide additional notice where appropriate.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Contact Us</h2>
           <p class="mt-2">
-            If you have questions about how your data is handled, contact us at
-            <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>.
+            If you have questions about this Privacy Policy, how Focus Pet handles information, or a privacy
+            request, contact:
+          </p>
+          <p class="mt-3">
+            <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>
           </p>
         </div>
       </div>

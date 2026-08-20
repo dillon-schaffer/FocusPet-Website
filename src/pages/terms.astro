@@ -17,95 +17,352 @@ import Footer from "../components/layout/Footer.astro";
 
       <div class="mt-8">
         <h1 class="text-3xl font-extrabold md:text-4xl">Terms of Service</h1>
-        <p class="mt-3 text-text-secondary">Last updated July 23, 2026.</p>
+        <p class="mt-3 text-text-secondary">Last updated August 20, 2026.</p>
       </div>
 
       <div class="mt-10 flex flex-col gap-8 text-text-secondary">
         <div>
+          <p>These Terms of Service govern your use of Focus Pet.</p>
+          <p class="mt-3">
+            By downloading, installing, creating an account for, purchasing Focus Pro through, or otherwise
+            using Focus Pet, you agree to these Terms.
+          </p>
+          <p class="mt-3">If you do not agree to these Terms, do not use Focus Pet.</p>
+        </div>
+
+        <div>
           <h2 class="font-heading text-lg font-bold text-text-primary">Using Focus Pet</h2>
           <p class="mt-2">
-            Focus Pet is a desktop focus companion for Windows. The core app — the focus timer, website and
-            application blocking, and decorating your space — is free to use for as long as you like. By downloading
-            or using Focus Pet, you agree to these terms.
+            Focus Pet is a desktop focus and productivity companion for supported Windows and macOS computers.
+          </p>
+          <p class="mt-3">
+            Focus Pet provides tools intended to help you manage focus sessions, reduce distractions, track
+            progress, and interact with Focus Pet's game and customization features.
+          </p>
+          <p class="mt-3">
+            Core Focus Pet features are available without purchasing Focus Pro. Certain features, including
+            Deep Focus and other premium features identified in the application, may require an active Focus
+            Pro entitlement.
+          </p>
+          <p class="mt-3">
+            Focus Pet is provided as a productivity aid. We do not guarantee that Focus Pet will prevent every
+            distraction, block every application or website, or operate identically with every application,
+            browser, operating-system version, hardware configuration, or third-party service.
           </p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Application Detection</h2>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Application and Website Detection</h2>
           <p class="mt-2">
-            Focus Pet monitors which applications are running on your computer in order to provide its core
-            focus-tracking features.
+            During an active focus session, Focus Pet may determine which application is currently active on
+            your computer.
           </p>
           <p class="mt-3">
-            When you choose one or more applications to focus on, Focus Pet checks the list of currently running
-            applications to determine whether your selected application is open and being used for a focus session.
-            This allows the app to:
+            For supported browsers, Focus Pet may also determine the active website domain in order to
+            evaluate the Allow List or Block List selected for your focus session.
           </p>
+          <p class="mt-3">
+            This functionality may use operating-system features such as Windows application APIs or macOS
+            Accessibility APIs.
+          </p>
+          <p class="mt-3">Focus Pet uses this information to:</p>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>Detect when a focus session starts and ends.</li>
-            <li>Track the time you spend focusing.</li>
-            <li>Award in-game progress, achievements, and rewards.</li>
-            <li>Display focus statistics and history.</li>
-            <li>Synchronize your progress across devices if you choose to create an account.</li>
+            <li>evaluate your selected focus rules;</li>
+            <li>determine whether your current activity is focused, distracted, or restricted;</li>
+            <li>provide Normal Focus and Deep Focus behavior;</li>
+            <li>track focus-session progress;</li>
+            <li>calculate rewards, streaks, and focus statistics;</li>
+            <li>display relevant Focus Pet notifications or warnings.</li>
+          </ul>
+          <p class="mt-3">Focus Pet does not use application or website detection to intentionally read:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>the contents of your files or documents;</li>
+            <li>the contents of webpages;</li>
+            <li>text entered into applications or websites;</li>
+            <li>passwords or other credentials;</li>
+            <li>private messages;</li>
+            <li>keystrokes;</li>
+            <li>screenshots;</li>
+            <li>screen recordings.</li>
           </ul>
           <p class="mt-3">
-            Focus Pet only identifies running applications that are necessary for these features.
+            Focus Pet's website rules operate on domains rather than storing full browsing URLs as focus-rule
+            history.
           </p>
-          <p class="mt-3">Focus Pet does not:</p>
-          <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>Read the contents of your files or documents.</li>
-            <li>Record your keyboard or mouse activity.</li>
-            <li>Capture screenshots or record your screen.</li>
-            <li>Read the content of websites or applications.</li>
-            <li>Access personal information stored within other applications.</li>
-          </ul>
           <p class="mt-3">
-            Application detection only occurs while Focus Pet is running and is used solely to provide the features
-            described above.
+            Some detection or enforcement functionality may depend on operating-system permissions, supported
+            browsers, application behavior, or other technical limitations. Focus Pet does not guarantee that
+            every application or website can always be detected, blocked, closed, or otherwise controlled
+            successfully.
           </p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Accounts and Cloud Saves</h2>
-          <p class="mt-2">
-            Creating a Focus Pet account is optional — Guest Mode gives you the full experience with your progress
-            saved locally on your device. If you choose to create an account, we store information such as your
-            email address, game progress, achievements, settings, and other gameplay-related data so that your
-            progress can be synchronized across supported devices.
+          <h2 class="font-heading text-lg font-bold text-text-primary">Normal Focus and Deep Focus</h2>
+          <p class="mt-2">Focus Pet may offer multiple focus modes.</p>
+          <p class="mt-3">
+            Normal Focus is intended to provide supportive focus tracking. Activity outside your selected
+            rules may be treated as a distraction and may affect Focus Pet rewards or statistics.
           </p>
           <p class="mt-3">
-            You are responsible for maintaining the confidentiality of your account credentials and for any activity
-            that occurs under your account.
+            Deep Focus provides stronger restriction behavior and may attempt to warn about, close, or
+            otherwise enforce restrictions against applications or websites according to the features available
+            on the operating system and the settings selected by the user.
+          </p>
+          <p class="mt-3">
+            Deep Focus is a Focus Pro feature unless otherwise stated in the application.
+          </p>
+          <p class="mt-3">
+            You remain responsible for saving your work and choosing appropriate focus settings. Although Focus
+            Pet is designed to prefer safe and graceful behavior, certain enforcement features may close
+            applications when enabled.
+          </p>
+          <p class="mt-3">
+            Do not rely on Focus Pet as the sole method of protecting important work, preventing access to
+            applications, or enforcing time-sensitive restrictions.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Accounts and Guest Mode</h2>
+          <p class="mt-2">Creating a Focus Pet account is optional.</p>
+          <p class="mt-3">
+            You may use Focus Pet in guest mode without creating an account. Guest-mode progress is generally
+            stored locally on the device and does not use Focus Pet cloud backup.
+          </p>
+          <p class="mt-3">If you create an account, Focus Pet may provide features including:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>cloud backup and restore;</li>
+            <li>account authentication;</li>
+            <li>Focus Pro entitlement association;</li>
+            <li>restoring supported progress and settings when you sign in on another supported device.</li>
+          </ul>
+          <p class="mt-3">
+            You are responsible for maintaining the confidentiality of your account credentials and for
+            activity performed through your account.
+          </p>
+          <p class="mt-3">
+            You agree to provide accurate account information and not to impersonate another person or attempt
+            to access another user's account.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Single-Active-Device Account Model</h2>
+          <p class="mt-2">Focus Pet accounts currently use a single-active-device model.</p>
+          <p class="mt-3">
+            You may sign in to your Focus Pet account on different supported devices over time, but only one
+            device may hold the active authenticated Focus Pet session at a time.
+          </p>
+          <p class="mt-3">
+            Signing in on another device may require you to choose whether to take over the active account
+            session. If you do so, the previously active device may be signed out.
+          </p>
+          <p class="mt-3">
+            Focus Pet does not currently promise simultaneous active use of the same account across multiple
+            devices.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Cloud Backup</h2>
+          <p class="mt-2">
+            If you choose to use a Focus Pet account, supported game progress and settings may be backed up
+            using Focus Pet's cloud services.
+          </p>
+          <p class="mt-3">
+            Cloud backup is intended to help restore supported Focus Pet data when signing in on another
+            supported device.
+          </p>
+          <p class="mt-3">
+            Cloud synchronization and restore depend on network availability and third-party service
+            availability. Although Focus Pet is designed to protect user progress, we do not guarantee that
+            cloud synchronization will always be instantaneous, uninterrupted, or free from errors.
+          </p>
+          <p class="mt-3">
+            You should not use Focus Pet cloud backup as the only backup system for information that is
+            independently important to you.
           </p>
         </div>
 
         <div>
           <h2 class="font-heading text-lg font-bold text-text-primary">Focus Pro</h2>
           <p class="mt-2">
-            Focus Pro is an optional paid upgrade. Purchase and billing details are shown at the time you choose to
-            buy it. Nothing about the free experience changes if you don't purchase Focus Pro.
+            Focus Pro is an optional paid upgrade that provides access to premium Focus Pet functionality,
+            including Deep Focus and other features identified in the application.
+          </p>
+          <p class="mt-3">
+            Available Focus Pro plans, prices, billing periods, and included features are displayed at the time
+            of purchase.
+          </p>
+          <p class="mt-3">Focus Pet may offer:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>monthly subscription plans;</li>
+            <li>yearly subscription plans;</li>
+            <li>lifetime or other one-time purchase options.</li>
+          </ul>
+          <p class="mt-3">
+            The plans actually available to you are the plans displayed in Focus Pet or during checkout at the
+            time of purchase.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Payments and Stripe</h2>
+          <p class="mt-2">
+            Focus Pro payments are processed through <strong class="text-text-primary">Stripe</strong>.
+          </p>
+          <p class="mt-3">
+            When you purchase Focus Pro, Focus Pet may open Stripe Checkout in your web browser.
+          </p>
+          <p class="mt-3">
+            Stripe may collect and process payment information under Stripe's own terms and privacy policy.
+          </p>
+          <p class="mt-3">
+            Focus Pet does not directly need to store your complete payment-card details in its own application
+            database.
+          </p>
+          <p class="mt-3">
+            Stripe is responsible for payment processing and billing events, including applicable subscription
+            payments, renewals, failed payments, cancellations, and payment-method management.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Recurring Subscriptions</h2>
+          <p class="mt-2">
+            If you purchase a recurring Focus Pro subscription, such as a monthly or yearly plan, the
+            subscription will automatically renew according to the terms shown during checkout unless it is
+            cancelled before renewal.
+          </p>
+          <p class="mt-3">
+            Your payment method may be charged at each renewal according to the price and billing period
+            presented at purchase, subject to any changes permitted by applicable law and communicated as
+            required.
+          </p>
+          <p class="mt-3">
+            You can manage supported billing and subscription settings through the billing-management options
+            provided by Focus Pet and Stripe.
+          </p>
+          <p class="mt-3">
+            Cancelling a recurring subscription generally prevents future renewal. Unless otherwise required by
+            applicable law or stated at the time of cancellation, cancellation does not necessarily remove
+            access immediately; you may retain Focus Pro access through the end of the period you already paid
+            for.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Lifetime Purchases</h2>
+          <p class="mt-2">
+            If Focus Pet offers a lifetime Focus Pro purchase, that purchase is a one-time payment for the
+            Focus Pro access described at the time of purchase.
+          </p>
+          <p class="mt-3">
+            "Lifetime" refers to access for the supported lifetime of the Focus Pet product or service and does
+            not guarantee that every current feature, operating system, third-party integration, or technical
+            implementation will remain unchanged forever.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Failed or Past-Due Payments</h2>
+          <p class="mt-2">
+            If a recurring payment fails, Stripe may retry the payment according to its billing settings.
+          </p>
+          <p class="mt-3">
+            Focus Pet may preserve access temporarily while a payment remains in a retry or past-due state, and
+            access may later be limited or removed if the subscription becomes unpaid, expires, is cancelled,
+            or otherwise no longer grants access.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Refunds</h2>
+          <p class="mt-2">
+            Except where required by applicable law or otherwise expressly stated at the time of purchase,
+            purchases are generally subject to the refund rules communicated through Focus Pet, Stripe, or the
+            applicable purchase flow.
+          </p>
+          <p class="mt-3">
+            Nothing in these Terms limits any refund, cancellation, or consumer-protection rights that cannot
+            legally be waived in your jurisdiction.
+          </p>
+          <p class="mt-3">
+            If you have a billing question, contact us at
+            <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Changes to Focus Pro and Pricing</h2>
+          <p class="mt-2">
+            We may change the features included in Focus Pro or the prices offered for future purchases or
+            renewal periods.
+          </p>
+          <p class="mt-3">
+            Any changes will be handled in accordance with applicable law and any notice requirements that
+            apply.
+          </p>
+          <p class="mt-3">
+            A change to future pricing does not retroactively change the amount already charged for a completed
+            purchase.
           </p>
         </div>
 
         <div>
           <h2 class="font-heading text-lg font-bold text-text-primary">Third-Party Services</h2>
-          <p class="mt-2">Focus Pet relies on trusted third-party services to provide certain functionality, including:</p>
+          <p class="mt-2">Focus Pet relies on third-party services to provide certain functionality.</p>
+          <p class="mt-3">These currently include:</p>
+
+          <h3 class="mt-6 font-heading text-base font-bold text-text-primary">Supabase</h3>
+          <p class="mt-2">Supabase is used for functionality such as:</p>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li><span class="font-semibold text-text-primary">Supabase</span> — user authentication and cloud save synchronization.</li>
-            <li><span class="font-semibold text-text-primary">RevenueCat</span> — subscription and purchase management (where applicable).</li>
+            <li>user authentication;</li>
+            <li>cloud backup and restore;</li>
+            <li>account/session coordination;</li>
+            <li>Focus Pro entitlement information;</li>
+            <li>server-side functionality supporting Focus Pro.</li>
           </ul>
-          <p class="mt-3">These services are governed by their own Terms of Service and Privacy Policies.</p>
+
+          <h3 class="mt-6 font-heading text-base font-bold text-text-primary">Stripe</h3>
+          <p class="mt-2">Stripe is used for functionality such as:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>Focus Pro Checkout;</li>
+            <li>payment processing;</li>
+            <li>recurring subscription billing;</li>
+            <li>one-time Focus Pro payments where offered;</li>
+            <li>payment-method management;</li>
+            <li>subscription management;</li>
+            <li>Stripe's Customer Portal.</li>
+          </ul>
+
+          <p class="mt-3">
+            Third-party services are governed by their own terms, privacy policies, availability, and technical
+            requirements.
+          </p>
+          <p class="mt-3">
+            We are not responsible for outages, changes, or failures caused solely by third-party services
+            outside our reasonable control.
+          </p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">App Availability</h2>
-          <p class="mt-2">
-            We continually improve Focus Pet and may release updates, add features, modify existing functionality,
-            or discontinue features at any time.
-          </p>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Updates and Availability</h2>
+          <p class="mt-2">We may update Focus Pet from time to time to:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>add or remove features;</li>
+            <li>improve reliability or security;</li>
+            <li>support new operating-system versions;</li>
+            <li>modify Focus Pro functionality;</li>
+            <li>fix bugs;</li>
+            <li>change the user experience.</li>
+          </ul>
+          <p class="mt-3">Some updates may be necessary to continue using certain features.</p>
+          <p class="mt-3">We may modify, suspend, or discontinue parts of Focus Pet where reasonably necessary.</p>
           <p class="mt-3">
-            We strive to keep the application working across supported operating systems, but we cannot guarantee
-            compatibility with every hardware or software configuration.
+            We do not guarantee that Focus Pet will remain compatible with every operating-system version,
+            browser, application, device, hardware configuration, or third-party integration indefinitely.
           </p>
         </div>
 
@@ -113,25 +370,166 @@ import Footer from "../components/layout/Footer.astro";
           <h2 class="font-heading text-lg font-bold text-text-primary">Acceptable Use</h2>
           <p class="mt-2">You agree not to:</p>
           <ul class="mt-2 list-disc space-y-1 pl-5">
-            <li>Attempt to reverse engineer, decompile, or modify the application except where permitted by law.</li>
-            <li>Circumvent or interfere with Focus Pet's intended functionality.</li>
-            <li>Use the application in a manner that could damage, disable, or impair the service.</li>
+            <li>use Focus Pet for unlawful purposes;</li>
+            <li>interfere with or attempt to disrupt Focus Pet's services or infrastructure;</li>
+            <li>attempt to gain unauthorized access to another user's account or Focus Pet systems;</li>
+            <li>misuse Focus Pet in a way that could damage, disable, overload, or impair the service;</li>
+            <li>attempt to bypass payment, account, entitlement, or access-control systems;</li>
+            <li>distribute malicious software through or in connection with Focus Pet;</li>
+            <li>
+              reverse engineer, decompile, or modify Focus Pet except where such restrictions are prohibited by
+              applicable law.
+            </li>
           </ul>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Changes to these terms</h2>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Intellectual Property</h2>
           <p class="mt-2">
-            We may update these terms as Focus Pet changes. If we do, we'll update the date at the top of this page.
-            Continuing to use Focus Pet after an update means you accept the revised terms.
+            Focus Pet, including its software, design, artwork, graphics, branding, characters, text, and other
+            original content, is owned by Focus Pet or its applicable licensors and is protected by applicable
+            intellectual-property laws.
+          </p>
+          <p class="mt-3">
+            These Terms give you a limited, personal, non-exclusive, non-transferable right to use Focus Pet
+            for its intended purpose.
+          </p>
+          <p class="mt-3">
+            These Terms do not transfer ownership of Focus Pet or its intellectual property to you.
           </p>
         </div>
 
         <div>
-          <h2 class="font-heading text-lg font-bold text-text-primary">Questions</h2>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Account Suspension or Termination</h2>
           <p class="mt-2">
-            If you have questions about these terms, contact us at
-            <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>.
+            We may suspend or terminate access to account-based or paid features if reasonably necessary
+            because of:
+          </p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>fraud;</li>
+            <li>abuse;</li>
+            <li>unlawful activity;</li>
+            <li>unauthorized access;</li>
+            <li>attempts to bypass payment or entitlement systems;</li>
+            <li>serious or repeated violations of these Terms;</li>
+            <li>security risks to Focus Pet or other users.</li>
+          </ul>
+          <p class="mt-3">
+            Where reasonable and legally required, we may provide notice or an opportunity to resolve the
+            issue.
+          </p>
+          <p class="mt-3">You may stop using Focus Pet at any time.</p>
+          <p class="mt-3">
+            Account-data deletion requests may be submitted as described in the Focus Pet Privacy Policy or by
+            contacting <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Disclaimers</h2>
+          <p class="mt-2">
+            Focus Pet is provided on an "as is" and "as available" basis to the extent permitted by law.
+          </p>
+          <p class="mt-3">We do not guarantee that Focus Pet will:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>always be available;</li>
+            <li>operate without bugs or interruptions;</li>
+            <li>detect every application or website;</li>
+            <li>successfully block or close every restricted application or website;</li>
+            <li>prevent all distractions;</li>
+            <li>preserve every unsaved change in third-party applications;</li>
+            <li>work with every operating-system update or third-party application.</li>
+          </ul>
+          <p class="mt-3">
+            Focus Pet is a productivity tool and is not intended to provide medical, legal, financial,
+            safety-critical, or emergency services.
+          </p>
+          <p class="mt-3">
+            Nothing in these Terms excludes warranties or rights that cannot legally be excluded under
+            applicable consumer-protection law.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Limitation of Liability</h2>
+          <p class="mt-2">
+            To the maximum extent permitted by applicable law, Focus Pet and its operators will not be liable
+            for indirect, incidental, special, consequential, or punitive damages arising from or related to
+            your use of Focus Pet.
+          </p>
+          <p class="mt-3">This may include losses resulting from:</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>loss of data;</li>
+            <li>lost productivity;</li>
+            <li>interruption of service;</li>
+            <li>third-party software behavior;</li>
+            <li>applications being closed through enforcement features you enabled;</li>
+            <li>inability to access Focus Pet or Focus Pro;</li>
+            <li>third-party service outages.</li>
+          </ul>
+          <p class="mt-3">
+            Where liability cannot legally be excluded, liability will be limited only to the extent permitted
+            by applicable law.
+          </p>
+          <p class="mt-3">Nothing in these Terms limits liability that cannot legally be limited or excluded.</p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Privacy</h2>
+          <p class="mt-2">Your use of Focus Pet is also subject to the Focus Pet Privacy Policy.</p>
+          <p class="mt-3">
+            The Privacy Policy explains how Focus Pet processes information, including application and website
+            detection, optional accounts, cloud backup, Supabase, and Stripe.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Children's Use</h2>
+          <p class="mt-2">
+            You may use Focus Pet only if you are legally permitted to enter into these Terms in your
+            jurisdiction.
+          </p>
+          <p class="mt-3">
+            If applicable law requires a parent or guardian to consent to your use of Focus Pet, you may only
+            use Focus Pet with that consent.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Changes to These Terms</h2>
+          <p class="mt-2">We may update these Terms as Focus Pet changes.</p>
+          <p class="mt-3">
+            When we make changes, we will update the <strong class="text-text-primary">Last updated</strong>
+            date at the top of this page.
+          </p>
+          <p class="mt-3">
+            If a change is material, we may provide additional notice where appropriate or required by law.
+          </p>
+          <p class="mt-3">
+            Your continued use of Focus Pet after updated Terms become effective constitutes acceptance of the
+            revised Terms to the extent permitted by law.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Governing Law</h2>
+          <p class="mt-2">
+            These Terms are governed by the laws applicable to the operator of Focus Pet, subject to any
+            mandatory consumer-protection rights or laws that apply based on your location.
+          </p>
+          <p class="mt-3">
+            Nothing in this section deprives you of protections that cannot legally be waived under the laws
+            that apply to you.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-heading text-lg font-bold text-text-primary">Contact</h2>
+          <p class="mt-2">
+            If you have questions about these Terms, Focus Pro billing, or your Focus Pet account, contact:
+          </p>
+          <p class="mt-3">
+            <a href="mailto:help@tryfocuspet.com">help@tryfocuspet.com</a>
           </p>
         </div>
       </div>
