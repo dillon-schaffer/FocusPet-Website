@@ -1,5 +1,22 @@
 ---
 import Button from "../ui/Button.astro";
+
+const windowsIcon = `
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 shrink-0" aria-hidden="true">
+    <rect x="3" y="3" width="8" height="8" />
+    <rect x="13" y="3" width="8" height="8" />
+    <rect x="3" y="13" width="8" height="8" />
+    <rect x="13" y="13" width="8" height="8" />
+  </svg>
+`;
+
+const macIcon = `
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 shrink-0" aria-hidden="true">
+    <ellipse cx="12" cy="14" rx="6" ry="6.5" />
+    <ellipse cx="16.5" cy="7" rx="2" ry="1.2" transform="rotate(40 16.5 7)" />
+    <rect x="11.3" y="4" width="1.4" height="4" rx="0.7" />
+  </svg>
+`;
 ---
 
 <section id="download" class="mx-auto max-w-6xl px-6 py-20 text-center">
@@ -12,42 +29,247 @@ import Button from "../ui/Button.astro";
       href="https://github.com/dillon-schaffer/FocusPet-Releases/releases/latest"
       variant="primary"
       data-download-button
+      data-platform-trigger="windows"
+      aria-expanded="false"
+      aria-controls="download-help-panel"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="h-5 w-5 shrink-0"
-        aria-hidden="true"
-      >
-        <rect x="3" y="3" width="8" height="8" />
-        <rect x="13" y="3" width="8" height="8" />
-        <rect x="3" y="13" width="8" height="8" />
-        <rect x="13" y="13" width="8" height="8" />
-      </svg>
+      <Fragment set:html={windowsIcon} />
       Download for Windows
     </Button>
     <Button
       href="https://github.com/dillon-schaffer/FocusPet-Releases/releases/latest/download/Focus-Pet-macOS.dmg"
       variant="secondary"
+      data-platform-trigger="macos"
+      aria-expanded="false"
+      aria-controls="download-help-panel"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="h-5 w-5 shrink-0"
-        aria-hidden="true"
-      >
-        <ellipse cx="12" cy="14" rx="6" ry="6.5" />
-        <ellipse cx="16.5" cy="7" rx="2" ry="1.2" transform="rotate(40 16.5 7)" />
-        <rect x="11.3" y="4" width="1.4" height="4" rx="0.7" />
-      </svg>
+      <Fragment set:html={macIcon} />
       Download for macOS
     </Button>
   </div>
+
+  <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out" data-help-wrapper>
+    <div class="min-h-0 overflow-hidden">
+      <div
+        id="download-help-panel"
+        class="mx-auto mt-6 max-w-2xl rounded-card border border-border bg-surface p-6 text-left opacity-0 shadow-soft transition-opacity duration-300 sm:p-8 md:max-w-4xl md:p-10 lg:max-w-5xl"
+        data-help-panel
+        role="region"
+        aria-label="Installation help"
+        aria-live="polite"
+      >
+        <!-- Windows help content -->
+        <div data-help-content="windows" hidden>
+          <div class="flex items-center gap-3 md:gap-4">
+            <span class="text-accent-blue" set:html={windowsIcon} />
+            <h3 class="font-heading text-xl font-bold md:text-2xl">Windows may show a security confirmation</h3>
+          </div>
+          <p class="mt-3 text-text-secondary md:mt-4 md:text-lg">
+            Focus Pet is distributed directly from our website, so Windows SmartScreen may ask you to
+            confirm the installer the first time you run it.
+          </p>
+          <p class="mt-3 text-text-secondary md:mt-4 md:text-lg">If this appears, choose:</p>
+          <p
+            class="mt-3 inline-block rounded-button bg-background px-5 py-2.5 font-heading font-bold text-text-primary md:mt-3 md:px-6 md:py-3 md:text-lg"
+          >
+            More info &rarr; Run anyway
+          </p>
+          <p class="mt-3 text-text-secondary md:text-lg">to continue installing Focus Pet.</p>
+
+          <div class="mt-6 overflow-hidden rounded-image border border-border bg-background shadow-soft md:mt-8" data-video-container>
+            <video
+              class="aspect-video w-full rounded-image object-cover"
+              src="/videos/WindowsExplanation.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              data-help-video
+              aria-hidden="true"
+            ></video>
+            <div
+              class="hidden aspect-video w-full flex-col items-center justify-center gap-2 p-6 text-center md:gap-3 md:p-8"
+              data-video-placeholder
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-8 w-8 text-accent-orange md:h-10 md:w-10"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" opacity="0.15" />
+                <path d="M10 8.5v7l6-3.5-6-3.5z" />
+              </svg>
+              <p class="text-sm font-semibold text-text-secondary md:text-base">Instructional video coming soon</p>
+              <p class="text-xs text-text-secondary md:text-sm">Just follow the steps above in the meantime.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- macOS help content -->
+        <div data-help-content="macos" hidden>
+          <div class="flex items-center gap-3 md:gap-4">
+            <span class="text-accent-blue" set:html={macIcon} />
+            <h3 class="font-heading text-xl font-bold md:text-2xl">macOS may ask you to confirm the app</h3>
+          </div>
+          <p class="mt-3 text-text-secondary md:mt-4 md:text-lg">
+            Because Focus Pet is not yet notarized by Apple, macOS may ask you to confirm the app the
+            first time you open it.
+          </p>
+          <p class="mt-3 text-text-secondary md:mt-4 md:text-lg">If this happens:</p>
+          <ol class="mt-3 list-decimal space-y-1.5 pl-5 text-text-secondary md:mt-4 md:space-y-2 md:pl-6 md:text-lg">
+            <li>
+              <strong class="text-text-primary">Try to open Focus Pet first.</strong> Open Focus Pet from
+              your Applications folder. When macOS shows the security warning, close the warning.
+            </li>
+            <li><strong class="text-text-primary">Open System Settings.</strong></li>
+            <li><strong class="text-text-primary">Go to Privacy &amp; Security.</strong></li>
+            <li><strong class="text-text-primary">Scroll down until you find the message about Focus Pet.</strong></li>
+            <li>Click <strong class="text-text-primary">Open Anyway</strong> next to the Focus Pet message.</li>
+            <li>macOS will ask you to confirm one more time. Click <strong class="text-text-primary">Open</strong> to launch Focus Pet.</li>
+          </ol>
+          <p class="mt-3 text-text-secondary md:mt-4 md:text-lg">
+            You should only need to do this the first time you open Focus Pet.
+          </p>
+
+          <div class="mt-6 overflow-hidden rounded-image border border-border bg-background shadow-soft md:mt-8" data-video-container>
+            <video
+              class="aspect-video w-full rounded-image object-cover"
+              src="/videos/MacDemo.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              data-help-video
+              aria-hidden="true"
+            ></video>
+            <div
+              class="hidden aspect-video w-full flex-col items-center justify-center gap-2 p-6 text-center md:gap-3 md:p-8"
+              data-video-placeholder
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="h-8 w-8 text-accent-orange md:h-10 md:w-10"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" opacity="0.15" />
+                <path d="M10 8.5v7l6-3.5-6-3.5z" />
+              </svg>
+              <p class="text-sm font-semibold text-text-secondary md:text-base">Instructional video coming soon</p>
+              <p class="text-xs text-text-secondary md:text-sm">Just follow the steps above in the meantime.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <p class="mx-auto mt-4 max-w-sm text-sm text-text-secondary">
     By downloading, you agree to our <a href="/terms" class="font-semibold">Terms of Service</a> and
     <a href="/privacy" class="font-semibold">Privacy Policy</a>.
   </p>
   <p class="mt-3 text-sm text-text-secondary">Windows 10 and 11 &middot; macOS (Apple Silicon)</p>
 </section>
+
+<script>
+  function initDownloadHelp() {
+    const triggers = Array.from(document.querySelectorAll<HTMLElement>("[data-platform-trigger]"));
+    const wrapper = document.querySelector<HTMLElement>("[data-help-wrapper]");
+    const panel = document.querySelector<HTMLElement>("[data-help-panel]");
+    const contents = Array.from(document.querySelectorAll<HTMLElement>("[data-help-content]"));
+    if (triggers.length === 0 || !wrapper || !panel || contents.length === 0) return;
+
+    let activePlatform: string | null = null;
+
+    function applyContent(platform: string) {
+      contents.forEach((el) => {
+        el.hidden = el.dataset.helpContent !== platform;
+      });
+      panel!.classList.remove("opacity-0");
+      panel!.classList.add("opacity-100");
+
+      // Browsers pause resource loading for <video> elements inside a
+      // hidden (display:none) subtree, so kick off the load explicitly now
+      // that the matching content block is visible for the first time.
+      const activeContent = contents.find((el) => el.dataset.helpContent === platform);
+      const video = activeContent?.querySelector<HTMLVideoElement>("[data-help-video]");
+      if (video && !video.dataset.loadStarted) {
+        video.dataset.loadStarted = "true";
+        video.load();
+      }
+    }
+
+    // Fall back to a static placeholder if an instructional video asset
+    // hasn't been provided yet, fails to load, or simply takes too long
+    // (e.g. a slow network) to start playing.
+    function watchVideoFallback(video: HTMLVideoElement) {
+      const container = video.closest<HTMLElement>("[data-video-container]");
+      const placeholder = container?.querySelector<HTMLElement>("[data-video-placeholder]");
+      if (!placeholder) return;
+
+      let settled = false;
+
+      function showFallback() {
+        if (settled) return;
+        settled = true;
+        video.hidden = true;
+        placeholder!.classList.remove("hidden");
+        placeholder!.classList.add("flex");
+      }
+
+      function showVideo() {
+        settled = true;
+        window.clearTimeout(fallbackTimer);
+      }
+
+      video.addEventListener("error", showFallback);
+      video.addEventListener("loadeddata", showVideo);
+
+      // Give the asset a few seconds to start playing before assuming it's
+      // missing — some browsers don't fire "error" for a 404 promptly.
+      const fallbackTimer = window.setTimeout(() => {
+        if (video.readyState === 0) showFallback();
+      }, 3000);
+    }
+
+    function showPlatform(platform: string) {
+      if (platform === activePlatform) return;
+      const isFirstOpen = activePlatform === null;
+      activePlatform = platform;
+
+      triggers.forEach((trigger) => {
+        trigger.setAttribute("aria-expanded", String(trigger.dataset.platformTrigger === platform));
+      });
+
+      wrapper!.classList.remove("grid-rows-[0fr]");
+      wrapper!.classList.add("grid-rows-[1fr]");
+
+      if (isFirstOpen) {
+        applyContent(platform);
+      } else {
+        panel!.classList.remove("opacity-100");
+        panel!.classList.add("opacity-0");
+        window.setTimeout(() => applyContent(platform), 150);
+      }
+    }
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        const platform = trigger.dataset.platformTrigger;
+        if (platform) showPlatform(platform);
+      });
+    });
+
+    const videos = Array.from(document.querySelectorAll<HTMLVideoElement>("[data-help-video]"));
+    videos.forEach(watchVideoFallback);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initDownloadHelp);
+  } else {
+    initDownloadHelp();
+  }
+</script>
